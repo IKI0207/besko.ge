@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ბესკო — ინჟინერია და მშენებლობა | BESKO — Engineering & Construction</title>
+<meta name="description" content="შეზღუდული პასუხისმგებლობის საზოგადოება „ბესკო“ — ხიდები, საძირკვლები, საყრდენი კედლები, ნაპირსამაგრი ნაგებობები და გზები. BESKO LLC — bridges, foundations, retaining walls, riverbank protection and roads in Georgia.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#12243A;--rust:#A43D12;--ink:#0A0B0E;--gray:#8A9099;--line:#E3E6EA;--bg:#F5F6F8}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Noto Sans Georgian','Segoe UI',Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+  header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy);letter-spacing:.5px}
+  .brand img{height:40px}
+  nav{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500}
+  nav a:hover{color:var(--rust)}
+  .lang{border:1.5px solid var(--navy);color:var(--navy);background:none;border-radius:4px;padding:5px 12px;font:inherit;font-weight:700;cursor:pointer}
+  .lang:hover{background:var(--navy);color:#fff}
+
+  .hero{background:var(--navy);color:#fff;position:relative;overflow:hidden}
+  .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;padding-top:96px;padding-bottom:96px}
+  .hero h1{font-size:44px;line-height:1.2;font-weight:800;margin-bottom:20px}
+  .hero p{font-size:18px;color:#C9D1DB;max-width:560px;margin-bottom:32px}
+  .hero .mark{background:#fff;border-radius:6px;padding:36px;display:flex;justify-content:center}
+  .hero .mark img{width:100%;max-width:300px}
+  .btn{display:inline-block;background:var(--rust);color:#fff;padding:13px 26px;border-radius:4px;font-weight:700}
+  .btn:hover{background:#8a3310}
+  .stripe{height:6px;background:linear-gradient(90deg,var(--navy) 78%,var(--gray) 78%)}
+
+  section{padding:88px 0}
+  .alt{background:var(--bg)}
+  .eyebrow{color:var(--rust);font-weight:700;font-size:14px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+  h2{font-size:32px;color:var(--navy);font-weight:800;margin-bottom:20px}
+  .lead{font-size:17px;color:#3A4350;max-width:760px}
+
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+  .fact{border-left:4px solid var(--rust);padding:6px 0 6px 18px}
+  .fact b{display:block;color:var(--navy);font-size:17px;margin-bottom:4px}
+  .fact span{color:#4A5361;font-size:15px}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:28px}
+  .card .ico{width:44px;height:44px;border-radius:4px;background:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .card .ico svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:2}
+  .card h3{font-size:18px;color:var(--navy);margin-bottom:8px}
+  .card p{font-size:15px;color:#4A5361}
+
+  .projects{margin-top:40px;border-top:2px solid var(--navy)}
+  .proj{display:grid;grid-template-columns:56px 1fr 220px;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+  .proj .n{font-weight:800;color:var(--rust);font-size:20px}
+  .proj h3{font-size:17px;color:var(--navy);margin-bottom:4px}
+  .proj p{font-size:14.5px;color:#4A5361}
+  .proj .tag{font-size:13px;color:var(--gray);font-weight:600;text-align:right}
+
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:40px}
+  .crow{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .crow b{min-width:180px;color:var(--gray);font-weight:600;font-size:15px}
+  .crow span,.crow a{color:var(--navy);font-weight:600}
+  .crow a:hover{color:var(--rust)}
+  iframe{width:100%;height:100%;min-height:320px;border:0;border-radius:6px}
+
+  footer{background:var(--ink);color:#9AA3AE;font-size:14px;padding:28px 0}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  [data-en]{}
+  @media(max-width:900px){
+    nav a{display:none}
+    .hero .wrap{grid-template-columns:1fr;padding-top:56px;padding-bottom:56px}
+    .hero .mark{display:none}
+    .hero h1{font-size:32px}
+    .facts,.grid,.contact{grid-template-columns:1fr}
+    .proj{grid-template-columns:40px 1fr}
+    .proj .tag{grid-column:2;text-align:left}
+    .crow{flex-direction:column;gap:2px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="brand"><img src="mark.svg" alt=""><span data-ka="ბესკო" data-en="BESKO">ბესკო</span></a>
+    <nav>
+      <a href="#about" data-ka="კომპანია" data-en="Company">კომპანია</a>
+      <a href="#services" data-ka="სერვისები" data-en="Services">სერვისები</a>
+      <a href="#projects" data-ka="პროექტები" data-en="Projects">პროექტები</a>
+      <a href="#contact" data-ka="კონტაქტი" data-en="Contact">კონტაქტი</a>
+      <button class="lang" id="lang" aria-label="Language">EN</button>
+    </nav>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1 data-ka="ხიდები, საძირკვლები და საინჟინრო ნაგებობები — დაპროექტებიდან ექსპლუატაციაში გადაცემამდე" data-en="Bridges, foundations and engineering structures — from design to handover">ხიდები, საძირკვლები და საინჟინრო ნაგებობები — დაპროექტებიდან ექსპლუატაციაში გადაცემამდე</h1>
+      <p data-ka="შეზღუდული პასუხისმგებლობის საზოგადოება „ბესკო“ არის ქართული სამშენებლო და საინჟინრო კომპანია, რომელიც ახორციელებს სახელმწიფო და მუნიციპალურ ინფრასტრუქტურულ პროექტებს მთელი საქართველოს მასშტაბით." data-en="BESKO LLC is a Georgian engineering and construction company delivering state and municipal infrastructure projects across Georgia.">შეზღუდული პასუხისმგებლობის საზოგადოება „ბესკო“ არის ქართული სამშენებლო და საინჟინრო კომპანია, რომელიც ახორციელებს სახელმწიფო და მუნიციპალურ ინფრასტრუქტურულ პროექტებს მთელი საქართველოს მასშტაბით.</p>
+      <a class="btn" href="#contact" data-ka="დაგვიკავშირდით" data-en="Contact us">დაგვიკავშირდით</a>
+    </div>
+    <div class="mark"><img src="logo.svg" alt="BESKO — ბესკო"></div>
+  </div>
+</div>
+<div class="stripe"></div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow" data-ka="კომპანიის შესახებ" data-en="About us">კომპანიის შესახებ</div>
+    <h2 data-ka="საიმედო პარტნიორი რთული ინფრასტრუქტურისთვის" data-en="A reliable partner for complex infrastructure">საიმედო პარტნიორი რთული ინფრასტრუქტურისთვის</h2>
+    <p class="lead" data-ka="„ბესკო“ სპეციალიზირებულია სამოქალაქო და გეოტექნიკურ მშენებლობაში: ხიდების მშენებლობასა და რეაბილიტაციაში, ხიმინჯოვან საძირკვლებში, საყრდენ კედლებში, მეწყრული უბნების სტაბილიზაციასა და ნაპირსამაგრ ნაგებობებში, საავტომობილო გზების აღდგენასა და მშენებლობაში. ჩვენი დამკვეთები არიან ქალაქ თბილისის მუნიციპალიტეტის მერია, მუნიციპალიტეტები და სახელმწიფო უწყებები." data-en="BESKO specialises in civil and geotechnical construction: bridge construction and rehabilitation, pile foundations, retaining walls, landslide stabilisation and riverbank protection, and road construction and restoration. Our clients include Tbilisi City Hall, municipalities and state agencies.">„ბესკო“ სპეციალიზირებულია სამოქალაქო და გეოტექნიკურ მშენებლობაში: ხიდების მშენებლობასა და რეაბილიტაციაში, ხიმინჯოვან საძირკვლებში, საყრდენ კედლებში, მეწყრული უბნების სტაბილიზაციასა და ნაპირსამაგრ ნაგებობებში, საავტომობილო გზების აღდგენასა და მშენებლობაში. ჩვენი დამკვეთები არიან ქალაქ თბილისის მუნიციპალიტეტის მერია, მუნიციპალიტეტები და სახელმწიფო უწყებები.</p>
+    <div class="facts">
+      <div class="fact"><b data-ka="საკუთარი საინჟინრო გუნდი" data-en="In-house engineering">საკუთარი საინჟინრო გუნდი</b><span data-ka="დაპროექტება, ხარჯთაღრიცხვა და ტექნიკური დოკუმენტაცია ერთ კომპანიაში" data-en="Design, cost estimating and technical documentation under one roof">დაპროექტება, ხარჯთაღრიცხვა და ტექნიკური დოკუმენტაცია ერთ კომპანიაში</span></div>
+      <div class="fact"><b data-ka="„დაპროექტება-მშენებლობა“" data-en="Design-build">„დაპროექტება-მშენებლობა“</b><span data-ka="სრული ციკლი — კვლევიდან ობიექტის ჩაბარებამდე" data-en="Full cycle — from survey to final acceptance">სრული ციკლი — კვლევიდან ობიექტის ჩაბარებამდე</span></div>
+      <div class="fact"><b data-ka="ხარისხის კონტროლი" data-en="Quality control">ხარისხის კონტროლი</b><span data-ka="მასალების ლაბორატორიული გამოცდა და დოკუმენტირებული კონტროლი" data-en="Laboratory testing of materials and documented control">მასალების ლაბორატორიული გამოცდა და დოკუმენტირებული კონტროლი</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="alt">
+  <div class="wrap">
+    <div class="eyebrow" data-ka="სერვისები" data-en="Services">სერვისები</div>
+    <h2 data-ka="რას ვაკეთებთ" data-en="What we do">რას ვაკეთებთ</h2>
+    <div class="grid">
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 16h20M4 16V10M20 16V10M2 10c4-6 16-6 20 0M8 16v-4M12 16v-5M16 16v-4"/></svg></div>
+        <h3 data-ka="ხიდები" data-en="Bridges">ხიდები</h3>
+        <p data-ka="ახალი სახიდე გადასასვლელების მშენებლობა, არსებული ხიდების რეაბილიტაცია და გამაგრება." data-en="Construction of new bridge crossings, rehabilitation and strengthening of existing bridges.">ახალი სახიდე გადასასვლელების მშენებლობა, არსებული ხიდების რეაბილიტაცია და გამაგრება.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 6h18M6 6v12l1.5 2L9 18V6M15 6v12l1.5 2 1.5-2V6"/></svg></div>
+        <h3 data-ka="ხიმინჯოვანი საძირკვლები" data-en="Pile foundations">ხიმინჯოვანი საძირკვლები</h3>
+        <p data-ka="ბურღვით-ჩასხმითი ხიმინჯები და რთულ გეოლოგიურ პირობებში საძირკვლების მოწყობა." data-en="Bored cast-in-place piles and foundations in difficult ground conditions.">ბურღვით-ჩასხმითი ხიმინჯები და რთულ გეოლოგიურ პირობებში საძირკვლების მოწყობა.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M5 21V4h5v17M10 21h10M10 9l8 12"/></svg></div>
+        <h3 data-ka="საყრდენი კედლები" data-en="Retaining walls">საყრდენი კედლები</h3>
+        <p data-ka="მონოლითური რკინაბეტონის საყრდენი კედლები, ანკერული და ხიმინჯოვანი კონსტრუქციები." data-en="Cast-in-place reinforced concrete retaining walls, anchored and piled structures.">მონოლითური რკინაბეტონის საყრდენი კედლები, ანკერული და ხიმინჯოვანი კონსტრუქციები.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 20L12 6l9 14M7 14h10M3 20h18"/></svg></div>
+        <h3 data-ka="მეწყრული უბნების სტაბილიზაცია" data-en="Landslide stabilisation">მეწყრული უბნების სტაბილიზაცია</h3>
+        <p data-ka="ფერდობების გამაგრება, დრენაჟი და საინჟინრო-გეოლოგიური ღონისძიებები." data-en="Slope stabilisation, drainage and geotechnical remediation works.">ფერდობების გამაგრება, დრენაჟი და საინჟინრო-გეოლოგიური ღონისძიებები.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M2 18c3-2 5 2 8 0s5 2 8 0 3 0 4 0M6 14V5h4v9M14 14V8h4v6"/></svg></div>
+        <h3 data-ka="ნაპირსამაგრი ნაგებობები" data-en="Riverbank protection">ნაპირსამაგრი ნაგებობები</h3>
+        <p data-ka="მდინარის ნაპირების დაცვა, სანიაღვრე კოლექტორებისა და ჰიდროტექნიკური ნაგებობების აღდგენა." data-en="Riverbank protection, restoration of storm collectors and hydraulic structures.">მდინარის ნაპირების დაცვა, სანიაღვრე კოლექტორებისა და ჰიდროტექნიკური ნაგებობების აღდგენა.</p></div>
+      <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M8 3L5 21M16 3l3 18M12 5v3M12 11v3M12 17v3"/></svg></div>
+        <h3 data-ka="საავტომობილო გზები" data-en="Roads">საავტომობილო გზები</h3>
+        <p data-ka="გზების დაზიანებული მონაკვეთების აღდგენა, მშენებლობა და მოწყობის სამუშაოები." data-en="Restoration of damaged road sections, construction and pavement works.">გზების დაზიანებული მონაკვეთების აღდგენა, მშენებლობა და მოწყობის სამუშაოები.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="eyebrow" data-ka="პროექტები" data-en="Projects">პროექტები</div>
+    <h2 data-ka="შესრულებული და მიმდინარე პროექტები" data-en="Completed and ongoing projects">შესრულებული და მიმდინარე პროექტები</h2>
+    <div class="projects">
+      <div class="proj"><div class="n">01</div><div>
+        <h3 data-ka="რუსთავი–ორთაჭალის დამაკავშირებელი ჩქაროსნული გზის დაზიანებული მონაკვეთის აღდგენა" data-en="Restoration of a damaged section of the Rustavi–Ortachala expressway">რუსთავი–ორთაჭალის დამაკავშირებელი ჩქაროსნული გზის დაზიანებული მონაკვეთის აღდგენა</h3>
+        <p data-ka="ნაპირსამაგრი სამუშაოები და პარაპეტული კედლის მოწყობა გულუას ქუჩის მიმდებარედ, ქალაქი თბილისი." data-en="Riverbank protection and parapet wall works near Gulua Street, Tbilisi.">ნაპირსამაგრი სამუშაოები და პარაპეტული კედლის მოწყობა გულუას ქუჩის მიმდებარედ, ქალაქი თბილისი.</p></div>
+        <div class="tag" data-ka="ქალაქ თბილისის მუნიციპალიტეტის მერია" data-en="Tbilisi City Hall">ქალაქ თბილისის მუნიციპალიტეტის მერია</div></div>
+      <div class="proj"><div class="n">02</div><div>
+        <h3 data-ka="მეწყრული უბნის სტაბილიზაცია გლდანის რაიონში" data-en="Landslide remediation in Gldani district">მეწყრული უბნის სტაბილიზაცია გლდანის რაიონში</h3>
+        <p data-ka="ლიბანის ქუჩის მიმდებარე ტერიტორიის მეწყრსაწინააღმდეგო ღონისძიებები, ქალაქი თბილისი." data-en="Landslide prevention works near Libani Street, Tbilisi.">ლიბანის ქუჩის მიმდებარე ტერიტორიის მეწყრსაწინააღმდეგო ღონისძიებები, ქალაქი თბილისი.</p></div>
+        <div class="tag" data-ka="ქალაქ თბილისის მუნიციპალიტეტის მერია" data-en="Tbilisi City Hall">ქალაქ თბილისის მუნიციპალიტეტის მერია</div></div>
+      <div class="proj"><div class="n">03</div><div>
+        <h3 data-ka="სანიაღვრე კოლექტორის „დამპალოს ხევი“ დაზიანებული მონაკვეთის აღდგენა" data-en="Restoration of the “Dampalos Khevi” storm collector">სანიაღვრე კოლექტორის „დამპალოს ხევი“ დაზიანებული მონაკვეთის აღდგენა</h3>
+        <p data-ka="დაპროექტება და მშენებლობა, ბოგდან ხმელნიცკის პირველი შესახვევის მიმდებარედ, ქალაქი თბილისი." data-en="Design and construction near Bogdan Khmelnitsky First Lane, Tbilisi.">დაპროექტება და მშენებლობა, ბოგდან ხმელნიცკის პირველი შესახვევის მიმდებარედ, ქალაქი თბილისი.</p></div>
+        <div class="tag" data-ka="ქალაქ თბილისის მუნიციპალიტეტის მერია" data-en="Tbilisi City Hall">ქალაქ თბილისის მუნიციპალიტეტის მერია</div></div>
+      <div class="proj"><div class="n">04</div><div>
+        <h3 data-ka="ახალი ხიდის მშენებლობა მდინარე დიღმურაზე" data-en="New bridge over the Dighmura river">ახალი ხიდის მშენებლობა მდინარე დიღმურაზე</h3>
+        <p data-ka="თეთრი დუქნის ქუჩა, საბურთალოს რაიონი, ქალაქი თბილისი." data-en="Tetri Dukni Street, Saburtalo district, Tbilisi.">თეთრი დუქნის ქუჩა, საბურთალოს რაიონი, ქალაქი თბილისი.</p></div>
+        <div class="tag" data-ka="ქალაქ თბილისის მუნიციპალიტეტის მერია" data-en="Tbilisi City Hall">ქალაქ თბილისის მუნიციპალიტეტის მერია</div></div>
+      <div class="proj"><div class="n">05</div><div>
+        <h3 data-ka="სახიდე გადასასვლელი სოფელ ახატანში" data-en="Bridge crossing at Akhatani village">სახიდე გადასასვლელი სოფელ ახატანში</h3>
+        <p data-ka="ახალი ხიდის მშენებლობა მდინარე ახატნისხევზე, დუშეთის მუნიციპალიტეტი." data-en="New bridge over the Akhatnistskhevi river, Dusheti municipality.">ახალი ხიდის მშენებლობა მდინარე ახატნისხევზე, დუშეთის მუნიციპალიტეტი.</p></div>
+        <div class="tag" data-ka="დუშეთის მუნიციპალიტეტი" data-en="Dusheti municipality">დუშეთის მუნიციპალიტეტი</div></div>
+      <div class="proj"><div class="n">06</div><div>
+        <h3 data-ka="სახიდე გადასასვლელი მდინარე მტკვარზე" data-en="Bridge crossing over the Mtkvari river">სახიდე გადასასვლელი მდინარე მტკვარზე</h3>
+        <p data-ka="ახალციხე–ნინოწმინდის საავტომობილო გზა, სამცხე-ჯავახეთი." data-en="Akhaltsikhe–Ninotsminda road, Samtskhe-Javakheti.">ახალციხე–ნინოწმინდის საავტომობილო გზა, სამცხე-ჯავახეთი.</p></div>
+        <div class="tag" data-ka="სამცხე-ჯავახეთი" data-en="Samtskhe-Javakheti">სამცხე-ჯავახეთი</div></div>
+      <div class="proj"><div class="n">07</div><div>
+        <h3 data-ka="ნოქალაქევი–ლეძაძამე–დიდი ჭყონის საავტომობილო გზის აღდგენა" data-en="Nokalakevi–Ledzadzame–Didi Chkoni road restoration">ნოქალაქევი–ლეძაძამე–დიდი ჭყონის საავტომობილო გზის აღდგენა</h3>
+        <p data-ka="გზის დაზიანებული მონაკვეთების აღდგენა, სამეგრელო." data-en="Restoration of damaged road sections, Samegrelo.">გზის დაზიანებული მონაკვეთების აღდგენა, სამეგრელო.</p></div>
+        <div class="tag" data-ka="საავტომობილო გზების დეპარტამენტი" data-en="Roads Department of Georgia">საავტომობილო გზების დეპარტამენტი</div></div>
+      <div class="proj"><div class="n">08</div><div>
+        <h3 data-ka="ნაპირსამაგრი სამუშაოები სოფელ ხიდისყურში" data-en="Riverbank protection at Khidiskuri village">ნაპირსამაგრი სამუშაოები სოფელ ხიდისყურში</h3>
+        <p data-ka="მდინარის ნაპირის დაცვა რკინიგზის ხიდის მიმდებარედ, კასპის მუნიციპალიტეტი." data-en="Riverbank protection near the railway bridge, Kaspi municipality.">მდინარის ნაპირის დაცვა რკინიგზის ხიდის მიმდებარედ, კასპის მუნიციპალიტეტი.</p></div>
+        <div class="tag" data-ka="კასპის მუნიციპალიტეტის მერია" data-en="Kaspi City Hall">კასპის მუნიციპალიტეტის მერია</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="alt">
+  <div class="wrap">
+    <div class="eyebrow" data-ka="კონტაქტი" data-en="Contact">კონტაქტი</div>
+    <h2 data-ka="დაგვიკავშირდით" data-en="Get in touch">დაგვიკავშირდით</h2>
+    <div class="contact">
+      <div>
+        <div class="crow"><b data-ka="კომპანია" data-en="Company">კომპანია</b><span data-ka="შეზღუდული პასუხისმგებლობის საზოგადოება „ბესკო“" data-en="BESKO LLC">შეზღუდული პასუხისმგებლობის საზოგადოება „ბესკო“</span></div>
+        <div class="crow"><b data-ka="საიდენტიფიკაციო კოდი" data-en="Company ID">საიდენტიფიკაციო კოდი</b><span>206106006</span></div>
+        <div class="crow"><b data-ka="მისამართი" data-en="Address">მისამართი</b><span data-ka="საქართველო, ქალაქი თბილისი, ისნის რაიონი, ქეთევან წამებულის გამზირი №1" data-en="1 Ketevan Tsamebuli Ave, Isani district, Tbilisi, Georgia">საქართველო, ქალაქი თბილისი, ისნის რაიონი, ქეთევან წამებულის გამზირი №1</span></div>
+        <div class="crow"><b data-ka="ტელეფონი" data-en="Phone">ტელეფონი</b><a href="tel:+995599042038">+995 599 04 20 38</a></div>
+        <div class="crow"><b data-ka="ელექტრონული ფოსტა" data-en="E-mail">ელექტრონული ფოსტა</b><a href="mailto:irakli.ba@gmail.com">irakli.ba@gmail.com</a></div>
+      </div>
+      <iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=%E1%83%A5%E1%83%94%E1%83%97%E1%83%94%E1%83%95%E1%83%90%E1%83%9C%20%E1%83%AC%E1%83%90%E1%83%9B%E1%83%94%E1%83%91%E1%83%A3%E1%83%9A%E1%83%98%E1%83%A1%20%E1%83%92%E1%83%90%E1%83%9B%E1%83%96%E1%83%98%E1%83%A0%E1%83%98%201%2C%20%E1%83%97%E1%83%91%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1%E1%83%98&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> <span data-ka="შეზღუდული პასუხისმგებლობის საზოგადოება „ბესკო“" data-en="BESKO LLC">შეზღუდული პასუხისმგებლობის საზოგადოება „ბესკო“</span></span>
+    <span data-ka="ხიდები • საძირკვლები • საყრდენი კედლები • ნაპირსამაგრი ნაგებობები • გზები" data-en="Bridges • Foundations • Retaining Walls • Riverbank Protection • Roads">ხიდები • საძირკვლები • საყრდენი კედლები • ნაპირსამაგრი ნაგებობები • გზები</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var cur = 'ka';
+  try { if (localStorage.getItem('lang') === 'en') cur = 'en'; } catch (e) {}
+  function apply(l) {
+    document.documentElement.lang = l;
+    document.querySelectorAll('[data-ka]').forEach(function (el) { el.textContent = el.getAttribute('data-' + l); });
+    document.getElementById('lang').textContent = l === 'ka' ? 'EN' : 'ქარ';
+    try { localStorage.setItem('lang', l); } catch (e) {}
+  }
+  document.getElementById('lang').addEventListener('click', function () { cur = cur === 'ka' ? 'en' : 'ka'; apply(cur); });
+  if (cur === 'en') apply('en');
+</script>
+</body>
+</html>
