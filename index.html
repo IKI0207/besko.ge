@@ -272,10 +272,10 @@ function render(){
     if(f!=='all'&&p.s!==f)return;
     var d=document.createElement('div');d.className='pc'+(p.img?' has':'');
     var st=p.s==='cur'?(L==='ka'?'მიმდინარე':'Ongoing'):(L==='ka'?'დასრულდა '+p.y:'Completed '+p.y);
-    var ph=p.img?'<img loading="lazy" src="img/'+p.img+'-1.jpg" alt="">'+(p.n>1?'<span class="cnt">'+p.n+' 📷</span>':''):'<div class="noimg"><img src="mark.svg" alt=""></div>';
+    var ph=p.img?'<img loading="lazy" src="'+p.img+'-1.jpg" alt="">'+(p.n>1?'<span class="cnt">'+p.n+' 📷</span>':''):'<div class="noimg"><img src="mark.svg" alt=""></div>';
     d.innerHTML='<div class="ph">'+ph+'<span class="badge'+(p.s==='cur'?' cur':'')+'">'+st+'</span></div><div class="bd"><h3></h3><p></p><div class="cl"></div></div>';
     d.querySelector('h3').textContent=p[L];d.querySelector('p').textContent=p['d'+L];d.querySelector('.cl').textContent=p['c'+L];
-    if(p.img)d.querySelector('.ph').onclick=function(){lbList=[];for(var i=1;i<=p.n;i++)lbList.push('img/'+p.img+'-'+i+'.jpg');lbI=0;lbTitle=p[L];show();};
+    if(p.img)d.querySelector('.ph').onclick=function(){lbList=[];for(var i=1;i<=p.n;i++)lbList.push(''+p.img+'-'+i+'.jpg');lbI=0;lbTitle=p[L];show();};
     g.appendChild(d);
   });
 }
