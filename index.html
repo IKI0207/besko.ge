@@ -71,7 +71,35 @@
   footer{background:var(--ink);color:#9AA3AE;font-size:14px;padding:28px 0}
   footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
-  [data-en]{}
+
+  .tabs{display:flex;gap:8px;margin:28px 0 24px;flex-wrap:wrap}
+  .tab{border:1.5px solid var(--line);background:#fff;color:var(--navy);padding:8px 18px;border-radius:4px;font:inherit;font-weight:600;cursor:pointer}
+  .tab.on{background:var(--navy);border-color:var(--navy);color:#fff}
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .pc{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+  .pc .ph{aspect-ratio:4/3;background:var(--navy);position:relative;overflow:hidden}
+  .pc .ph img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+  .pc.has:hover .ph img{transform:scale(1.04)}
+  .pc.has .ph{cursor:zoom-in}
+  .pc .ph .noimg{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.25}
+  .pc .ph .noimg img{width:46%;height:auto;object-fit:contain;filter:brightness(0) invert(1)}
+  .pc .badge{position:absolute;top:12px;left:12px;background:#fff;color:var(--navy);font-size:12px;font-weight:700;padding:4px 10px;border-radius:3px}
+  .pc .badge.cur{background:var(--rust);color:#fff}
+  .pc .cnt{position:absolute;bottom:10px;right:10px;background:rgba(10,11,14,.7);color:#fff;font-size:12px;padding:3px 8px;border-radius:3px}
+  .pc .bd{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+  .pc h3{font-size:16px;line-height:1.4;color:var(--navy)}
+  .pc p{font-size:14px;color:#4A5361}
+  .pc .cl{margin-top:auto;padding-top:10px;font-size:13px;color:var(--gray);font-weight:600;border-top:1px solid var(--line)}
+  .lb{position:fixed;inset:0;background:rgba(10,11,14,.94);z-index:50;display:flex;align-items:center;justify-content:center}
+  .lb[hidden]{display:none}
+  .lb figure{max-width:90vw;max-height:88vh;text-align:center}
+  .lb img{max-width:90vw;max-height:80vh;object-fit:contain}
+  .lb figcaption{color:#C9D1DB;font-size:14px;margin-top:10px}
+  .lbx,.lbn{position:absolute;background:none;border:0;color:#fff;font-size:44px;cursor:pointer;padding:10px 18px;line-height:1}
+  .lbx{top:10px;right:14px}.lbp{left:6px}.lbnx{right:6px}
+  @media(max-width:900px){.pgrid{grid-template-columns:1fr}}
+  @media(min-width:901px) and (max-width:1100px){.pgrid{grid-template-columns:repeat(2,1fr)}}
+
   @media(max-width:900px){
     nav a{display:none}
     .hero .wrap{grid-template-columns:1fr;padding-top:56px;padding-bottom:56px}
@@ -154,43 +182,21 @@
 <section id="projects">
   <div class="wrap">
     <div class="eyebrow" data-ka="პროექტები" data-en="Projects">პროექტები</div>
-    <h2 data-ka="შესრულებული და მიმდინარე პროექტები" data-en="Completed and ongoing projects">შესრულებული და მიმდინარე პროექტები</h2>
-    <div class="projects">
-      <div class="proj"><div class="n">01</div><div>
-        <h3 data-ka="რუსთავი–ორთაჭალის დამაკავშირებელი ჩქაროსნული გზის დაზიანებული მონაკვეთის აღდგენა" data-en="Restoration of a damaged section of the Rustavi–Ortachala expressway">რუსთავი–ორთაჭალის დამაკავშირებელი ჩქაროსნული გზის დაზიანებული მონაკვეთის აღდგენა</h3>
-        <p data-ka="ნაპირსამაგრი სამუშაოები და პარაპეტული კედლის მოწყობა გულუას ქუჩის მიმდებარედ, ქალაქი თბილისი." data-en="Riverbank protection and parapet wall works near Gulua Street, Tbilisi.">ნაპირსამაგრი სამუშაოები და პარაპეტული კედლის მოწყობა გულუას ქუჩის მიმდებარედ, ქალაქი თბილისი.</p></div>
-        <div class="tag" data-ka="ქალაქ თბილისის მუნიციპალიტეტის მერია" data-en="Tbilisi City Hall">ქალაქ თბილისის მუნიციპალიტეტის მერია</div></div>
-      <div class="proj"><div class="n">02</div><div>
-        <h3 data-ka="მეწყრული უბნის სტაბილიზაცია გლდანის რაიონში" data-en="Landslide remediation in Gldani district">მეწყრული უბნის სტაბილიზაცია გლდანის რაიონში</h3>
-        <p data-ka="ლიბანის ქუჩის მიმდებარე ტერიტორიის მეწყრსაწინააღმდეგო ღონისძიებები, ქალაქი თბილისი." data-en="Landslide prevention works near Libani Street, Tbilisi.">ლიბანის ქუჩის მიმდებარე ტერიტორიის მეწყრსაწინააღმდეგო ღონისძიებები, ქალაქი თბილისი.</p></div>
-        <div class="tag" data-ka="ქალაქ თბილისის მუნიციპალიტეტის მერია" data-en="Tbilisi City Hall">ქალაქ თბილისის მუნიციპალიტეტის მერია</div></div>
-      <div class="proj"><div class="n">03</div><div>
-        <h3 data-ka="სანიაღვრე კოლექტორის „დამპალოს ხევი“ დაზიანებული მონაკვეთის აღდგენა" data-en="Restoration of the “Dampalos Khevi” storm collector">სანიაღვრე კოლექტორის „დამპალოს ხევი“ დაზიანებული მონაკვეთის აღდგენა</h3>
-        <p data-ka="დაპროექტება და მშენებლობა, ბოგდან ხმელნიცკის პირველი შესახვევის მიმდებარედ, ქალაქი თბილისი." data-en="Design and construction near Bogdan Khmelnitsky First Lane, Tbilisi.">დაპროექტება და მშენებლობა, ბოგდან ხმელნიცკის პირველი შესახვევის მიმდებარედ, ქალაქი თბილისი.</p></div>
-        <div class="tag" data-ka="ქალაქ თბილისის მუნიციპალიტეტის მერია" data-en="Tbilisi City Hall">ქალაქ თბილისის მუნიციპალიტეტის მერია</div></div>
-      <div class="proj"><div class="n">04</div><div>
-        <h3 data-ka="ახალი ხიდის მშენებლობა მდინარე დიღმურაზე" data-en="New bridge over the Dighmura river">ახალი ხიდის მშენებლობა მდინარე დიღმურაზე</h3>
-        <p data-ka="თეთრი დუქნის ქუჩა, საბურთალოს რაიონი, ქალაქი თბილისი." data-en="Tetri Dukni Street, Saburtalo district, Tbilisi.">თეთრი დუქნის ქუჩა, საბურთალოს რაიონი, ქალაქი თბილისი.</p></div>
-        <div class="tag" data-ka="ქალაქ თბილისის მუნიციპალიტეტის მერია" data-en="Tbilisi City Hall">ქალაქ თბილისის მუნიციპალიტეტის მერია</div></div>
-      <div class="proj"><div class="n">05</div><div>
-        <h3 data-ka="სახიდე გადასასვლელი სოფელ ახატანში" data-en="Bridge crossing at Akhatani village">სახიდე გადასასვლელი სოფელ ახატანში</h3>
-        <p data-ka="ახალი ხიდის მშენებლობა მდინარე ახატნისხევზე, დუშეთის მუნიციპალიტეტი." data-en="New bridge over the Akhatnistskhevi river, Dusheti municipality.">ახალი ხიდის მშენებლობა მდინარე ახატნისხევზე, დუშეთის მუნიციპალიტეტი.</p></div>
-        <div class="tag" data-ka="დუშეთის მუნიციპალიტეტი" data-en="Dusheti municipality">დუშეთის მუნიციპალიტეტი</div></div>
-      <div class="proj"><div class="n">06</div><div>
-        <h3 data-ka="სახიდე გადასასვლელი მდინარე მტკვარზე" data-en="Bridge crossing over the Mtkvari river">სახიდე გადასასვლელი მდინარე მტკვარზე</h3>
-        <p data-ka="ახალციხე–ნინოწმინდის საავტომობილო გზა, სამცხე-ჯავახეთი." data-en="Akhaltsikhe–Ninotsminda road, Samtskhe-Javakheti.">ახალციხე–ნინოწმინდის საავტომობილო გზა, სამცხე-ჯავახეთი.</p></div>
-        <div class="tag" data-ka="სამცხე-ჯავახეთი" data-en="Samtskhe-Javakheti">სამცხე-ჯავახეთი</div></div>
-      <div class="proj"><div class="n">07</div><div>
-        <h3 data-ka="ნოქალაქევი–ლეძაძამე–დიდი ჭყონის საავტომობილო გზის აღდგენა" data-en="Nokalakevi–Ledzadzame–Didi Chkoni road restoration">ნოქალაქევი–ლეძაძამე–დიდი ჭყონის საავტომობილო გზის აღდგენა</h3>
-        <p data-ka="გზის დაზიანებული მონაკვეთების აღდგენა, სამეგრელო." data-en="Restoration of damaged road sections, Samegrelo.">გზის დაზიანებული მონაკვეთების აღდგენა, სამეგრელო.</p></div>
-        <div class="tag" data-ka="საავტომობილო გზების დეპარტამენტი" data-en="Roads Department of Georgia">საავტომობილო გზების დეპარტამენტი</div></div>
-      <div class="proj"><div class="n">08</div><div>
-        <h3 data-ka="ნაპირსამაგრი სამუშაოები სოფელ ხიდისყურში" data-en="Riverbank protection at Khidiskuri village">ნაპირსამაგრი სამუშაოები სოფელ ხიდისყურში</h3>
-        <p data-ka="მდინარის ნაპირის დაცვა რკინიგზის ხიდის მიმდებარედ, კასპის მუნიციპალიტეტი." data-en="Riverbank protection near the railway bridge, Kaspi municipality.">მდინარის ნაპირის დაცვა რკინიგზის ხიდის მიმდებარედ, კასპის მუნიციპალიტეტი.</p></div>
-        <div class="tag" data-ka="კასპის მუნიციპალიტეტის მერია" data-en="Kaspi City Hall">კასპის მუნიციპალიტეტის მერია</div></div>
+    <h2 data-ka="ჩვენი პროექტები" data-en="Our projects">ჩვენი პროექტები</h2>
+    <div class="tabs" id="tabs">
+      <button class="tab on" data-f="all" data-ka="ყველა" data-en="All">ყველა</button>
+      <button class="tab" data-f="done" data-ka="დასრულებული" data-en="Completed">დასრულებული</button>
+      <button class="tab" data-f="cur" data-ka="მიმდინარე" data-en="Ongoing">მიმდინარე</button>
     </div>
+    <div class="pgrid" id="pgrid"></div>
   </div>
 </section>
+<div class="lb" id="lb" hidden>
+  <button class="lbx" id="lbx" aria-label="Close">×</button>
+  <button class="lbn lbp" id="lbp" aria-label="Previous">‹</button>
+  <figure><img id="lbimg" alt=""><figcaption id="lbcap"></figcaption></figure>
+  <button class="lbn lbnx" id="lbnx" aria-label="Next">›</button>
+</div>
 
 <section id="contact" class="alt">
   <div class="wrap">
@@ -217,6 +223,69 @@
 </footer>
 
 <script>
+var R='საქართველოს საავტომობილო გზების დეპარტამენტი', RE='Roads Department of Georgia';
+var TB='ქალაქ თბილისის მუნიციპალიტეტის მერია', TBE='Tbilisi City Hall';
+var KS='კასპის მუნიციპალიტეტის მერია', KSE='Kaspi Municipality';
+var PROJECTS=[
+// ---- მიმდინარე / ongoing
+{s:'cur',y:'2026',img:'gldani',n:3,ka:'მეწყრული უბნის სტაბილიზაცია გლდანის რაიონში',en:'Landslide stabilisation in Gldani district',dka:'ლიბანის ქუჩის მიმდებარე ტერიტორიის მეწყერსაწინააღმდეგო ღონისძიებები, ქალაქი თბილისი.',den:'Landslide remediation works near Libani Street, Tbilisi.',cka:TB,cen:TBE},
+{s:'cur',y:'2026',img:'tetridukni',n:3,ka:'ახალი ხიდი მდინარე დიღმურაზე, თეთრი დუქნის ქუჩა',en:'New bridge over the Dighmura river, Tetri Dukni Street',dka:'ახალი სახიდე გადასასვლელის მშენებლობა, საბურთალოს რაიონი, ქალაქი თბილისი. სურათებზე — საპროექტო ვიზუალიზაცია.',den:'Construction of a new bridge crossing, Saburtalo district, Tbilisi. Images show the design visualisation.',cka:TB,cen:TBE},
+{s:'cur',y:'2026',ka:'რუსთავი–ორთაჭალის ჩქაროსნული გზის ჩაწყვეტილი ვაკისის აღდგენა',en:'Restoration of the collapsed subgrade, Rustavi–Ortachala expressway',dka:'ნაპირსამაგრი სამუშაოები და პარაპეტული კედელი, ქალაქი თბილისი.',den:'Riverbank protection and parapet wall works, Tbilisi.',cka:TB,cen:TBE},
+{s:'cur',y:'2026',ka:'სანიაღვრე კოლექტორის „დამპალოს ხევი“ დაზიანებული მონაკვეთის აღდგენა',en:'Restoration of the “Dampalos Khevi” storm collector',dka:'დაპროექტება და მშენებლობა, ქალაქი თბილისი.',den:'Design and construction, Tbilisi.',cka:TB,cen:TBE},
+{s:'cur',y:'2026',ka:'ხიდის რეაბილიტაცია, დუშეთის მუნიციპალიტეტი (ანანური)',en:'Bridge rehabilitation, Dusheti municipality (Ananuri)',dka:'არსებული ხიდის სარეაბილიტაციო სამუშაოები.',den:'Rehabilitation of an existing bridge.',cka:'დუშეთის მუნიციპალიტეტი',cen:'Dusheti Municipality'},
+{s:'cur',y:'2026',ka:'სახიდე გადასასვლელი სოფელ ახატანში',en:'Bridge crossing at Akhatani village',dka:'ახალი ხიდის მშენებლობა მდინარე ახატნისხევზე, დუშეთის მუნიციპალიტეტი.',den:'New bridge over the Akhatnistskhevi river, Dusheti municipality.',cka:'დუშეთის მუნიციპალიტეტი',cen:'Dusheti Municipality'},
+{s:'cur',y:'2026',ka:'ხიდის მშენებლობა, საგურამო',en:'Bridge construction, Saguramo',dka:'ხიდის სამშენებლო სამუშაოები, მცხეთის მუნიციპალიტეტი.',den:'Bridge construction works, Mtskheta municipality.',cka:'ქვეკონტრაქტი',cen:'Subcontract'},
+{s:'cur',y:'2026',ka:'ნაპირსამაგრი სამუშაოები სოფელ ხიდისყურში',en:'Riverbank protection at Khidiskuri village',dka:'მდინარის ნაპირის დაცვა რკინიგზის ხიდის მიმდებარედ, კასპის მუნიციპალიტეტი.',den:'Riverbank protection near the railway bridge, Kaspi municipality.',cka:KS,cen:KSE},
+// ---- დასრულებული / completed
+{s:'done',y:'2025',img:'ortachala',n:5,ka:'ორთაჭალჰესის ხიდი-აკვედუკის რეაბილიტაცია',en:'Rehabilitation of the Ortachala HPP bridge-aqueduct',dka:'მდინარე მტკვარზე ხიდი-აკვედუკის რეაბილიტაცია-რეკონსტრუქცია, დაპროექტება-მშენებლობა, ქალაქი თბილისი.',den:'Design-build rehabilitation and reconstruction of the bridge-aqueduct over the Mtkvari river, Tbilisi.',cka:TB,cen:TBE},
+{s:'done',y:'2025',img:'alpana',n:5,ka:'ალპანა–ცაგერის გზის დაზიანებული მონაკვეთების აღდგენა (შ-18)',en:'Restoration of damaged sections, Alpana–Tsageri road (Sh-18)',dka:'კმ0+500, კმ1+200, კმ4+200 და კმ6+180 მონაკვეთების აღდგენა, ხიმინჯოვანი და საყრდენი კონსტრუქციები.',den:'Restoration at km 0+500, 1+200, 4+200 and 6+180, including piled and retaining structures.',cka:R,cen:RE},
+{s:'done',y:'2025',ka:'ლაილაში–თაბორის საავტომობილო გზის რეაბილიტაცია',en:'Lailashi–Tabori access road rehabilitation',dka:'დაპროექტება-მშენებლობა, მეორე ფაზა, ცაგერის მუნიციპალიტეტი; გაბიონის საყრდენი კედლები და წყალარინება.',den:'Design-build, phase two, Tsageri municipality; gabion retaining walls and drainage.',cka:'საქართველოს მუნიციპალური განვითარების ფონდი',cen:'Municipal Development Fund of Georgia'},
+{s:'done',y:'2025',ka:'ბორჩალოს ქუჩის ხიდი, მარნეული',en:'Borchalo Street bridge, Marneuli',dka:'ხიდის მშენებლობა-რეაბილიტაცია, ქალაქი მარნეული.',den:'Bridge construction and rehabilitation, Marneuli.',cka:'მარნეულის მუნიციპალიტეტი',cen:'Marneuli Municipality'},
+{s:'done',y:'2025',ka:'ჯინჭვისის საყრდენი კედელი, ონი',en:'Jinchvisi retaining wall, Oni',dka:'საყრდენი კედლის მოწყობა, ონის მუნიციპალიტეტი.',den:'Retaining wall construction, Oni municipality.',cka:'ონის მუნიციპალიტეტი',cen:'Oni Municipality'},
+{s:'done',y:'2025',ka:'სოფელ ანაგაში ჰამლეტ გონაშვილის ქუჩის გზის რეაბილიტაცია',en:'Hamlet Gonashvili Street road rehabilitation, Anaga',dka:'გზის სარეაბილიტაციო სამუშაოები, სიღნაღის მუნიციპალიტეტი.',den:'Road rehabilitation works, Sighnaghi municipality.',cka:'სიღნაღის მუნიციპალიტეტის მერია',cen:'Sighnaghi Municipality'},
+{s:'done',y:'2025',img:'bakuriani',n:3,ka:'ბაკურიანის ბიათლონის კომპლექსი',en:'Bakuriani biathlon complex',dka:'სამშენებლო სამუშაოები ბიათლონის კომპლექსზე, ბაკურიანი.',den:'Construction works at the biathlon complex, Bakuriani.',cka:'ქვეკონტრაქტი',cen:'Subcontract'},
+{s:'done',y:'2026',ka:'ქეჩარუხისა და ვარჯაანის რკინაბეტონის გზები',en:'Kecharukhi and Varjaani reinforced concrete roads',dka:'რკინაბეტონის საფარის მოწყობა, კასპის მუნიციპალიტეტი.',den:'Reinforced concrete road pavement, Kaspi municipality.',cka:KS,cen:KSE},
+{s:'done',y:'2024',img:'borjomi',n:4,ka:'ბორჯომი–ბაკურიანი–ახალქალაქის გზის მიწის ვაკისის აღდგენა (შ-20)',en:'Subgrade restoration on the Borjomi–Bakuriani–Akhalkalaki road (Sh-20)',dka:'კმ19+100, კმ23+700 და კმ24+150 მონაკვეთებზე მეწყრული პროცესებით დაზიანებული ვაკისის აღდგენა.',den:'Restoration of landslide-damaged subgrade at km 19+100, 23+700 and 24+150.',cka:R,cen:RE},
+{s:'done',y:'2024',ka:'მდინარე რიონზე სახიდე გადასასვლელის რეაბილიტაცია (შ-16)',en:'Rioni river bridge rehabilitation (Sh-16)',dka:'ქუთაისი (ჭომა)–ალპანა–მამისონის უღელტეხილის გზის კმ111+229.',den:'Kutaisi (Choma)–Alpana–Mamisoni Pass road, km 111+229.',cka:R,cen:RE},
+{s:'done',y:'2024',img:'kobi',n:5,ka:'მცხეთა–სტეფანწმინდა–ლარსის გზის კმ105 საყრდენი კედლის აღდგენა (ს-3)',en:'Retaining wall restoration at km 105, Mtskheta–Stepantsminda–Lars road (S-3)',dka:'სტიქიით დაზიანებული ქვედა საყრდენი კედლის აღდგენა, ანკერული გამაგრება.',den:'Restoration of the disaster-damaged lower retaining wall with anchored strengthening.',cka:R,cen:RE},
+{s:'done',y:'2024',ka:'სოფელ ერთაწმინდის გზაზე ცემენტბეტონის საფარის მოწყობა',en:'Cement concrete pavement on the Ertatsminda village road',dka:'გზის საფარის მოწყობა, კასპის მუნიციპალიტეტი.',den:'Road pavement works, Kaspi municipality.',cka:KS,cen:KSE},
+{s:'done',y:'2024',ka:'სოფელ წინარეხში ბეტონის გზის მოწყობა',en:'Concrete road at Tsinarekhi village',dka:'ბეტონის გზის მოწყობა, კასპის მუნიციპალიტეტი.',den:'Concrete road construction, Kaspi municipality.',cka:KS,cen:KSE},
+{s:'done',y:'2024',ka:'სოფელ ლიშოში ხიდის მოწყობა',en:'Bridge construction at Lisho village',dka:'ახალი ხიდი, არტნის ადმინისტრაციული ერთეული, თიანეთის მუნიციპალიტეტი.',den:'New bridge, Artani administrative unit, Tianeti municipality.',cka:'თიანეთის მუნიციპალიტეტი',cen:'Tianeti Municipality'},
+{s:'done',y:'2024',ka:'სოფელ ოკამის გზის რეაბილიტაცია (მეორე მონაკვეთი)',en:'Okami village road rehabilitation (second section)',dka:'გზის რეაბილიტაცია, კასპის მუნიციპალიტეტი.',den:'Road rehabilitation, Kaspi municipality.',cka:KS,cen:KSE},
+{s:'done',y:'2023',img:'akhaltsikhe',n:2,ka:'მდინარე მტკვარზე სახიდე გადასასვლელის რეაბილიტაცია (ს-11)',en:'Mtkvari river bridge rehabilitation (S-11)',dka:'ახალციხე–ნინოწმინდის გზის კმ6 (5+131).',den:'Akhaltsikhe–Ninotsminda road, km 6 (5+131).',cka:R,cen:RE},
+{s:'done',y:'2023',img:'lentekhi',n:4,ka:'წყალტუბო–ცაგერი–ლენტეხის გზის კმ94+950 ჩაწყვეტილი ვაკისის აღდგენა (შ-15)',en:'Collapsed subgrade restoration at km 94+950, Tsqaltubo–Tsageri–Lentekhi road (Sh-15)',dka:'მონოლითური საყრდენი კედლები და გზის აღდგენა.',den:'Cast-in-place retaining walls and road restoration.',cka:'ქვეკონტრაქტი',cen:'Subcontract'},
+{s:'done',y:'2023',ka:'ნოქალაქევი–ლეძაძამე–დიდი ჭყონის გზის დაზიანებული მონაკვეთების აღდგენა (შ-86)',en:'Restoration of damaged sections, Nokalakevi–Ledzadzame–Didi Chkoni road (Sh-86)',dka:'კმ2, კმ11 და კმ17 მონაკვეთები.',den:'Sections at km 2, 11 and 17.',cka:R,cen:RE},
+{s:'done',y:'2022',img:'metekhi',n:6,ka:'მეტეხის ხიდის რეაბილიტაცია',en:'Metekhi Bridge rehabilitation',dka:'ისტორიული ხიდის სარეაბილიტაციო სამუშაოები, ქალაქი თბილისი.',den:'Rehabilitation of the historic bridge, Tbilisi.',cka:TB,cen:TBE},
+{s:'done',y:'2021',img:'mestia',n:4,ka:'სოფელ დევრასთან დამაკავშირებელი ხიდი',en:'Bridge to Devra village',dka:'ახალი ხიდი, ჭუბერის ტერიტორიული ერთეული, მესტიის მუნიციპალიტეტი.',den:'New bridge, Chuberi territorial unit, Mestia municipality.',cka:'მესტიის მუნიციპალიტეტი',cen:'Mestia Municipality'},
+{s:'done',y:'2021',ka:'ხიდის რეაბილიტაცია სოფელ დიღომში',en:'Bridge rehabilitation in Dighomi village',dka:'თეთრი გიორგის ქუჩისა და სოფლის სასაფლაოს დამაკავშირებელ გზაზე, ქალაქი თბილისი.',den:'On the road linking Tetri Giorgi Street and the village cemetery, Tbilisi.',cka:TB,cen:TBE},
+{s:'done',y:'2021',img:'mleta',n:5,ka:'მცხეთა–სტეფანწმინდა–ლარსის გზის 82-ე კმ ჩაწყვეტილი ვაკისის აღდგენა (ს-3)',en:'Collapsed subgrade restoration at km 82, Mtskheta–Stepantsminda–Lars road (S-3)',dka:'ხიმინჯოვანი და საყრდენი კონსტრუქციები, გზის საფარის აღდგენა.',den:'Piled and retaining structures, pavement restoration.',cka:R,cen:RE},
+{s:'done',y:'2021',img:'shakriani',n:4,ka:'თელავი–შაქრიანის გზის კმ2 გზაგამტარის რეაბილიტაცია (შ-70)',en:'Overpass rehabilitation at km 2, Telavi–Shakriani road (Sh-70)',dka:'გზაგამტარის კონსტრუქციების აღდგენა და გამაგრება.',den:'Restoration and strengthening of the overpass structure.',cka:R,cen:RE},
+{s:'done',y:'2020',img:'mtatsminda',n:3,ka:'გრუნტის დამჭერი და საყრდენი კედლები მთაწმინდის რაიონში',en:'Retaining walls in Mtatsminda district',dka:'რჩეულიშვილის, ჭონქაძის, პეტრიაშვილისა და ჯაფარიძის ქუჩებზე, ქალაქი თბილისი.',den:'On Rcheulishvili, Chonkadze, Petriashvili and Japaridze streets, Tbilisi.',cka:'მთაწმინდის რაიონის გამგეობა',cen:'Mtatsminda District Administration'},
+{s:'done',y:'2019',ka:'ღვარცოფგამტარი ნაგებობა და ნაპირსამაგრი სამუშაოები (შ-16)',en:'Mudflow passage structure and riverbank protection (Sh-16)',dka:'ქუთაისი–ალპანა–მამისონის უღელტეხილის გზის კმ130+590.',den:'Kutaisi–Alpana–Mamisoni Pass road, km 130+590.',cka:R,cen:RE}
+];
+
+var lbList=[],lbI=0,lbTitle='';
+function render(){
+  var f=document.querySelector('.tab.on').getAttribute('data-f'),g=document.getElementById('pgrid'),L=cur;
+  g.innerHTML='';
+  PROJECTS.slice().sort(function(a,b){return (b.img?1:0)-(a.img?1:0);}).forEach(function(p){
+    if(f!=='all'&&p.s!==f)return;
+    var d=document.createElement('div');d.className='pc'+(p.img?' has':'');
+    var st=p.s==='cur'?(L==='ka'?'მიმდინარე':'Ongoing'):(L==='ka'?'დასრულდა '+p.y:'Completed '+p.y);
+    var ph=p.img?'<img loading="lazy" src="img/'+p.img+'-1.jpg" alt="">'+(p.n>1?'<span class="cnt">'+p.n+' 📷</span>':''):'<div class="noimg"><img src="mark.svg" alt=""></div>';
+    d.innerHTML='<div class="ph">'+ph+'<span class="badge'+(p.s==='cur'?' cur':'')+'">'+st+'</span></div><div class="bd"><h3></h3><p></p><div class="cl"></div></div>';
+    d.querySelector('h3').textContent=p[L];d.querySelector('p').textContent=p['d'+L];d.querySelector('.cl').textContent=p['c'+L];
+    if(p.img)d.querySelector('.ph').onclick=function(){lbList=[];for(var i=1;i<=p.n;i++)lbList.push('img/'+p.img+'-'+i+'.jpg');lbI=0;lbTitle=p[L];show();};
+    g.appendChild(d);
+  });
+}
+function show(){var lb=document.getElementById('lb');lb.hidden=false;document.getElementById('lbimg').src=lbList[lbI];document.getElementById('lbcap').textContent=lbTitle+'  ·  '+(lbI+1)+' / '+lbList.length;}
+function step(k){lbI=(lbI+k+lbList.length)%lbList.length;show();}
+document.getElementById('lbx').onclick=function(){document.getElementById('lb').hidden=true;};
+document.getElementById('lbp').onclick=function(){step(-1)};document.getElementById('lbnx').onclick=function(){step(1)};
+document.getElementById('lb').onclick=function(e){if(e.target.id==='lb')this.hidden=true;};
+document.addEventListener('keydown',function(e){if(document.getElementById('lb').hidden)return;if(e.key==='Escape')document.getElementById('lb').hidden=true;if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1);});
+document.querySelectorAll('.tab').forEach(function(t){t.onclick=function(){document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('on')});t.classList.add('on');render();};});
   document.getElementById('yr').textContent = new Date().getFullYear();
   var cur = 'ka';
   try { if (localStorage.getItem('lang') === 'en') cur = 'en'; } catch (e) {}
@@ -225,9 +294,10 @@
     document.querySelectorAll('[data-ka]').forEach(function (el) { el.textContent = el.getAttribute('data-' + l); });
     document.getElementById('lang').textContent = l === 'ka' ? 'EN' : 'ქარ';
     try { localStorage.setItem('lang', l); } catch (e) {}
+    cur = l; render();
   }
   document.getElementById('lang').addEventListener('click', function () { cur = cur === 'ka' ? 'en' : 'ka'; apply(cur); });
-  if (cur === 'en') apply('en');
+  if (cur === 'en') apply('en'); else render();
 </script>
 </body>
 </html>
